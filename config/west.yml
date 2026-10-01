@@ -1,14 +1,15 @@
 manifest:
-  defaults:
-    revision: v0.3
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    # Zen e-ink display patches (periodic full refresh, etc.) on top of ZMK v0.3
+    # See https://github.com/SethMilliken/zmk/tree/zen-display-patches-0.3
+    - name: SethMilliken
+      url-base: https://github.com/SethMilliken
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: SethMilliken
+      revision: zen-display-patches-0.3
       import: app/west.yml
   self:
     path: config
