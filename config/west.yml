@@ -2,14 +2,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Zen e-ink display patches (periodic full refresh, etc.) on top of ZMK v0.3
-    # See https://github.com/SethMilliken/zmk/tree/zen-display-patches-0.3
-    - name: SethMilliken
-      url-base: https://github.com/SethMilliken
+    # Fork of SethMilliken/zmk zen-display-patches-0.3 (ZMK v0.3 + Zen e-ink patches)
+    # with an IL0323 partial-refresh fix and a power-on style periodic full refresh.
+    - name: rvdeguzman
+      url-base: https://github.com/rvdeguzman
   projects:
     - name: zmk
-      remote: SethMilliken
-      revision: zen-display-patches-0.3
+      remote: rvdeguzman
+      revision: zen-display-fix-0.3
       import: app/west.yml
   self:
     path: config
